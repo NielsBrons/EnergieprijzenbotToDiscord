@@ -43,8 +43,10 @@ if __name__ == "__main__":
         for gas in data['data']['g']:
             if gas['datetime'] == t.isoformat():
                 all_in_g = round(gas['all_in_price'], 3)
-
+        
         await channel.send(f'{now.hour}:00 all-in prices: electricity :zap:: {all_in_e}, gas :fire:: {all_in_g}')
+
+        
         await client.close()
 
     @client.event
